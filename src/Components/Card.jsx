@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
+
 const Card = ({ user }) => {
-  const { name, username } = user;
+  const { name, id, username } = user;
   const addFav = () => {
     const existingFavs = JSON.parse(localStorage.getItem("doctor")) || [];
-    const isAlreadyFav = existingFavs.some((fav) => fav.id === user.id);
+    const isAlreadyFav = existingFavs.some((fav) => fav.id === id);
 
     if (!isAlreadyFav) {
       const updatedFavs = [...existingFavs, user];
@@ -16,8 +18,10 @@ const Card = ({ user }) => {
 
   return (
     <div className="card">
-      <img src="../../public/images/doctor.jpg" alt="Imagen de doctor" />
-      <p> {name} </p>
+      <Link to={`/detail/${id}`}>
+        <img src="../../public/images/doctor.jpg" alt="Imagen de doctor" />
+        <p> {name} </p>
+      </Link>
       <p>{username}</p>
 
       {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
