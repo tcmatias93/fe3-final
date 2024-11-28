@@ -1,5 +1,5 @@
 const Card = ({ user }) => {
-  const { name, id, username } = user;
+  const { name, username } = user;
   const addFav = () => {
     // Aqui iria la logica para agregar la Card en el localStorage
   };
@@ -9,10 +9,8 @@ const Card = ({ user }) => {
       {/* En cada card deberan mostrar en name - username y el id */}
 
       <img src="../../public/images/doctor.jpg" alt="Imagen de doctor" />
-      <p>
-        {id}, Nombre: {name}{" "}
-      </p>
-      <p>Nombre de usuario: {username}</p>
+      <p> {name} </p>
+      <p>{username}</p>
 
       {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
 
