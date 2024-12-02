@@ -2,13 +2,12 @@ import { createContext, useContext, useEffect, useReducer } from "react";
 import { reducer } from "../reducers/reducer";
 import axios from "axios";
 
-export const initialState = { theme: "", data: [] };
+export const initialState = { theme: false, data: [] };
 
 export const ContextGlobal = createContext();
 
 export const ContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  //Aqui deberan implementar la logica propia del Context, utilizando el hook useMemo
 
   const url = "https://jsonplaceholder.typicode.com/users";
 

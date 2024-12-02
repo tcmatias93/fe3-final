@@ -5,10 +5,13 @@ import Home from "./Routes/Home";
 import Contact from "./Routes/Contact";
 import Favs from "./Routes/Favs";
 import Detail from "./Routes/Detail";
+import { useRecipeState } from "./context/global.context";
 
 function App() {
+  const { state } = useRecipeState();
+
   return (
-    <div className="App">
+    <div className={`App ${state.theme ? "dark" : ""}`}>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

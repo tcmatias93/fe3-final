@@ -6,8 +6,6 @@ import { useRecipeState } from "../context/global.context";
 const Home = () => {
   const { state } = useRecipeState();
 
-  console.log("state: ", state);
-
   return (
     <main className="">
       <h1>Home</h1>
@@ -15,7 +13,6 @@ const Home = () => {
         {state.data.map((data) => (
           <Card key={data.id} user={data} />
         ))}
-        {/* Aqui deberias renderizar las cards */}
       </div>
     </main>
   );

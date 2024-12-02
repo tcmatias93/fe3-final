@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
-
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+import { useRecipeState } from "../context/global.context";
 
 const Navbar = () => {
+  const { state, dispatch } = useRecipeState();
+
+  const toggleTheme = () => {
+    dispatch({ type: "THEME", payload: !state.theme });
+  };
   return (
     <nav>
-      {/* Aqui deberan agregar los liks correspondientes a las rutas definidas */}
-
       <Link to={"/"} className="link">
         <img src="../../public/DH.ico" alt="" />
       </Link>
@@ -21,8 +23,9 @@ const Navbar = () => {
         Fav
       </Link>
 
-      {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
-      <button className="favButton">Change theme</button>
+      <button className="favButton" onClick={toggleTheme}>
+        Change theme
+      </button>
     </nav>
   );
 };

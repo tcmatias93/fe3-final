@@ -19,12 +19,14 @@ const Card = ({ user }) => {
   return (
     <div className="card">
       <Link to={`/detail/${id}`}>
-        <img src="../../public/images/doctor.jpg" alt="Imagen de doctor" />
+        <img
+          src="../../public/images/doctor.jpg"
+          alt="Imagen de doctor"
+          width={"100%"}
+        />
         <p> {name} </p>
       </Link>
       <p>{username}</p>
-
-      {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
 
       <button onClick={addFav} className="favButton">
         Add fav

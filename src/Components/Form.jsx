@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 const Form = () => {
-  //Aqui deberan implementar el form completo con sus validaciones
   const [user, setUser] = useState({ name: "", email: "" });
   const [error, setError] = useState(false);
   const [show, setShow] = useState(false);
@@ -11,7 +10,6 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (user.name.trim().length > 5 && emailRegex.test(user.email)) {
-      console.log(`EL usuario ingresado fue: ${user.name} ${user.email}`);
       setError(false);
       setShow(true);
     } else {
