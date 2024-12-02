@@ -9,22 +9,19 @@ const Navbar = () => {
   };
   return (
     <nav>
-      <Link to={"/"} className="link">
+      <Link to={"/"}>
         <img src="../../public/DH.ico" alt="" />
       </Link>
 
-      <Link to={"/"} className="link">
-        Home
-      </Link>
-      <Link to={"/contact"} className="link">
-        Contact
-      </Link>
-      <Link to={"/fav"} className="link">
-        Fav
-      </Link>
+      <Link to={"/"}>Home</Link>
+      <Link to={"/contact"}>Contact</Link>
+      <Link to={"/fav"}>Fav</Link>
 
-      <button className="favButton" onClick={toggleTheme}>
-        Change theme
+      <button
+        className={`favButton ${state.theme ? "favButton2" : ""}`}
+        onClick={toggleTheme}
+      >
+        {state.theme ? "🌞" : "🌙"}
       </button>
     </nav>
   );

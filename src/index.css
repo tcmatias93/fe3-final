@@ -15,7 +15,15 @@ code {
   background-color: rgba(136, 136, 136, 0.116);
   padding: 10px;
   border: none;
-  width: 100%;
+  width: auto;
+  cursor: pointer;
+}
+
+.favButton2 {
+  background-color: rgb(252, 252, 252);
+  padding: 10px;
+  border: none;
+  width: auto;
   cursor: pointer;
 }
 
@@ -25,8 +33,9 @@ h1 {
 
 nav {
   display: flex;
-  width: 80vw;
-  justify-content: flex-start;
+  width: 90%;
+  justify-content: space-evenly;
+  align-items: center;
   padding: 1rem;
 }
 
@@ -119,4 +128,8 @@ tr:nth-child(even) {
 }
 .dark > a {
   color: white;
+}
+
+.App {
+  height: 100%;
 }
